@@ -1,0 +1,23 @@
+micronaut:
+  application:
+    name: botTwitchKotlin
+  server:
+    port: 8081
+datasources:
+  default:
+    url: jdbc:h2:mem:devDb;MVCC=TRUE;LOCK_TIMEOUT=10000;DB_CLOSE_ON_EXIT=FALSE
+    driverClassName: org.h2.Driver
+    username: sa
+    password: ''
+    schema-generate: CREATE_DROP
+    dialect: H2
+#jpa.default.properties.hibernate.hbm2ddl.auto: update
+
+jpa:
+  default:
+    name: crm_jpa
+    properties:
+      hibernate:
+        hbm2ddl:
+          auto: create
+        show_sql: true
