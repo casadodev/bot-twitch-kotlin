@@ -10,7 +10,6 @@ import org.slf4j.LoggerFactory
 import javax.inject.Singleton
 import javax.persistence.EntityManager
 import javax.persistence.TypedQuery
-import kotlin.streams.toList
 
 
 @Singleton
@@ -28,7 +27,6 @@ class SubsRepositoryOnRDB(
         return entity
     }
 
-    //TODO: ver sobre "JPQL" Query
     @ReadOnly
     override fun findAll(): List<SubsEntity>? {
         logger.info("Método find all")
@@ -36,6 +34,6 @@ class SubsRepositoryOnRDB(
             "SELECT s FROM SubsEntity s order by s.id",
             SubsEntity::class.java
         )
-        return query.resultStream.toList()
+        return query.resultList
     }
 }
