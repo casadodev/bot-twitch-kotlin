@@ -7,9 +7,19 @@ datasources:
     driverClassName: org.h2.Driver
     username: sa
     password: ''
-jpa.default.properties.hibernate.hbm2ddl.auto: update
+#jpa.default.properties.hibernate.hbm2ddl.auto: update
+
+jpa:
+  default:
+    name: twitch_bot_casadodev
+    properties:
+      hibernate:
+        hbm2ddl:
+          auto: update
+        show_sql: true
 
 app:
   twitch:
-    clientId: ${TWITCH_CLIENT_ID}
-    secret: ${TWITCH_SECRET}
+    channel: casadodev
+    client: ${client}
+    secret: ${secret}
